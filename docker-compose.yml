@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+
+  red-discord:
+    build: ./red-discordbot/
+    environment:
+      - BOT_NAME=bot_name
+      - RED_TOKEN=${DISCORD_TOKEN}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
